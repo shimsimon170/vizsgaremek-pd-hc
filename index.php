@@ -48,7 +48,9 @@ include_once "web.php";
         <div class="menuHero">
             <h1>Yume Neko Menu</h1>
             <p>Check out our menu! Scroll down to view by category or see the uncategorised menu with the button below.</p>
-            <button href="#uncategorised">Full Menu</button>
+            <form action="/menu" method="get">
+                <button type="submit" href="#uncategorised">Full Menu</button>
+            </form>
         </div>
         <div class="categorised">
             <div class="menuD">
