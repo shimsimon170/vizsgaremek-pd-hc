@@ -7,13 +7,86 @@ include_once "web.php";
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
-    <title>Cat café</title>
+    <title>Yume Neko Café</title>
 
 </head>
 
 <body>
 
-    <div class="container">
+    <nav class="navbar">
+        <div class="header">
+            <div class="logo">
+                <img src="./img/logo.jpg" alt="logo" title="logo">
+                <h3>Yume Neko Café</h3>
+            </div>
+            <div class="navbarNav">
+                <ul class="navList">
+                    <li class="navItem">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#menus">Menus</a>
+                    </li>
+                    <li class="navItem">
+                        <button href="#signUpForm">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="homeContainer">
+        //
+    </div>
+
+    <div id="about"></div>
+
+    <div id="menus" class="menuContainer">
+        <div class="menuHero">
+            <h1>Yume Neko Menu</h1>
+            <p>Check out our menu! Scroll down to view by category or see the uncategorised menu with the button below.</p>
+            <button href="#uncategorised">Full Menu</button>
+        </div>
+        <div class="categorised">
+            <div class="menuD">
+                <h2>Drinks</h2>
+                <p>Check out our delicious drinks, all available for order and dine-in!</p>
+                <button>View Category</button>
+                <img src="./img/drinksIcon.jpg" alt="drinks" title="drinks">
+            </div>
+            <div class="menuF">
+                <h2>Food</h2>
+                <p>Check out our tasty food items, all available for order and dine-in!</p>
+                <button>View Category</button>
+                <img src="./img/foodIcon.jpg" alt="food" title="food">
+            </div>
+            <div class="popular">
+                <div class="lg">
+                    <img src="./img/menuSushi.jpg" alt="">
+                    <h3></h3>
+                    <p></p>
+                    <p class="price"></p>
+                </div>
+                <div class="sm">
+                    <img src="./img/menuMatcha.jpg" alt="">
+                    <h3></h3>
+                    <p></p>
+                    <p class="price"></p>
+                </div>
+                <div class="sm">
+                    <img src="./img/menuRamen.jpg" alt="">
+                    <h3></h3>
+                    <p></p>
+                    <p class="price"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="searchItems">
 
         <h1>Menu</h1>
 
@@ -36,13 +109,13 @@ include_once "web.php";
     <div class="myTable">
     <?php
 
-    // Táblázat az eredmény megjelnítése érdekében, az adatokat a response["body"] kell tartalmazza
     $result = json_decode($response,JSON_OBJECT_AS_ARRAY);
     if (isset($result['body'])) {
         echo "<table>
                 <thead>
                     <td>Name</td>
                     <td>Description</td>
+                    <td>Price</td>
                     <td>Category</td>
                 </thead>
                 <tbody>";
@@ -53,6 +126,7 @@ include_once "web.php";
             echo "<tr>";
             echo "<td>" . $item['name'] . "</td>";
             echo "<td>" . $item['description'] . "</td>";
+            echo "<td>" . $item['price'] . "</td>";
             echo "<td>" . $item['category'] . "</td>";
             echo "<td>
                 <form action=\"/users/delete\" method=\"POST\">
