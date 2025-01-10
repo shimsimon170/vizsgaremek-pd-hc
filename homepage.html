@@ -23,12 +23,15 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#">Home</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="menus.html">Menus</a>
               </li>
+
               <li class="nav-item">
                 <button href="#signUpForm">Sign Up</button>
               </li>
@@ -37,45 +40,90 @@
         </div>
       </nav>
 
-    <div class="homeContainer">
-        //
+    <div class="container-fluid homeContainer">
+        <div class="row">
+            <div class="col">
+                <h1>Welcome to The Yume Neko Café Webpage!</h1>
+                <p class="flavourtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus tempora aut, tenetur sapiente libero veritatis debitis doloremque rem obcaecati corporis esse praesentium magni officiis alias dolore reiciendis exercitationem aliquid.
+                Asperiores illo voluptatum ad quaerat ex vel inventore vero unde! Recusandae ullam consectetur fuga nobis fugiat perspiciatis modi deserunt voluptatibus, voluptatum nulla exercitationem incidunt nihil sed, tempora totam ab magni!</p>
+                <a href="about.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Meet Our Cats!</h2>
+            <div class="card" style="width: 50rem;">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./cats/mikan.jpg" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Mikan</h5>
+                        <p class="card-text">Mikan is a tabby Maine Coon cat. She's 6 months old (as of 10/01/2025) and very friendly. She loves getting attention from our costumers.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                            <img src="./cats/chibi.jpg" alt="">
+                            <div class="card-body">
+                            <h5 class="card-title">Chibi</h5>
+                            <p class="card-text">Chibi</p>
+                            </div>
+                    </div>
+                    <div class="carousel-item">
+                            <img src="./cats/azuki.png" alt="">
+                            <div class="card-body">
+                            <h5 class="card-title">Azuki</h5>
+                            <p class="card-text">Azuki</p>
+                            </div>
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <!---<div class="myTable">
-    <?php
 
-    $result = json_decode($response,JSON_OBJECT_AS_ARRAY);
-    if (isset($result['body'])) {
-        echo "<table>
-                <thead>
-                    <td>Name</td>
-                    <td>Description</td>
-                    <td>Price</td>
-                    <td>Category</td>
-                </thead>
-                <tbody>";
 
-        $items = $result['body'];
+              <!--
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="card" style="width: 25rem;">
+                    <img src="./cats/mikan.jpg" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Mikan</h5>
+                      <p class="card-text">Mikan is a tabby Maine Coon cat. She's 6 months old (as of 10/01/2025) and very friendly. She loves getting attention from our costumers.</p>
+                    </div>
+                </div>
+            </div>
 
-        foreach ($items as $item) {
-            echo "<tr>";
-            echo "<td>" . $item['name'] . "</td>";
-            echo "<td>" . $item['description'] . "</td>";
-            echo "<td>" . $item['price'] . "</td>";
-            echo "<td>" . $item['category'] . "</td>";
-            echo "<td>
-                <form action=\"/users/delete\" method=\"POST\">
-                <input class=\"hidden\" type=\"int\" name=\"id\" value=".$item['id']."></input>
-                </form>
-            </td>";
-            echo "</tr>";
-        }
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="card" style="width: 25rem;">
+                    <img src="./cats/chibi.jpg" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Chibi</h5>
+                      <p class="card-text">Chibi</p>
+                    </div>
+                </div>
+            </div>
 
-        echo "</tbody>
-        </table>";
-    }
-    ?>
-    </div>--->
-    
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="card" style="width: 25rem;">
+                    <img src="./cats/azuki.png" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Azuki</h5>
+                      <p class="card-text">Azuki</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

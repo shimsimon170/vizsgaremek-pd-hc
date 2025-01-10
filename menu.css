@@ -9,10 +9,24 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    text-align: center;
+}
+
+.menuHero h1, .menuHero p{
+    color: #E0CFBD;
+}
+
+.menuHero button{
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px !important;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 
 .categorised{
-    background-color: #c7b9ac;
+    background-color: #E0CFBD;
     color: rgb(68, 68, 68);
 }
 
