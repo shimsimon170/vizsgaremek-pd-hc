@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('./bg/catbg.jpg');
+    background-color: #E0CFBD;
 }
 .container {
     background: rgba(250, 221, 186, 0.253);
@@ -23,9 +23,9 @@ button {
     padding: 10px 15px;
     margin-bottom: 10px;
     border: none;
-    border-radius: 15px;
-    background-color: #ffb977;
-    color: rgb(75, 53, 25);
+    border-radius: 20px !important;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 table {
     width: 100%;
@@ -44,39 +44,23 @@ th {
 td {
     background-color: #f9f9f9;
 }
-.myTable{
-    display: block;
-    width: 100% ;
-}
+
 .hidden{
     display: none;
 }
 
-.menuHero{
-    display: block;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('./img/menuHero.jpg');
+.logo img{
+    width: 100px;
+    margin: auto 5px auto auto !important;
+    border-radius: 100%;
 }
 
-.categorised{
-    background-color: #c7b9ac;
-    color: rgb(68, 68, 68);
+#navbarNav{
+    justify-content: end !important;
+    padding: 10px 0;
+    color: black;
 }
 
-.categorised img{
-    margin: auto;
-    width: 500px;
-    border-radius: 15%;
-}
-
-.menuD img{
-    float: right;
-    clear: right;
-}
-
-.menuF img{
-    float: left;
-    clear: left;
+.nav-item{
+    margin: auto 10px auto 10px !important;
 }

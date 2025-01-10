@@ -1,0 +1,33 @@
+
+
+.menuHero{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('./img/menuHero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.categorised{
+    background-color: #c7b9ac;
+    color: rgb(68, 68, 68);
+}
+
+.categorised img{
+    margin: auto;
+    width: 500px;
+    border-radius: 15%;
+}
+
+.menuD img{
+    float: right;
+    clear: right;
+}
+
+.menuF img{
+    float: left;
+    clear: left;
+}
