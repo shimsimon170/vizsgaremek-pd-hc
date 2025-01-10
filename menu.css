@@ -28,6 +28,7 @@
 .categorised{
     background-color: #E0CFBD;
     color: rgb(68, 68, 68);
+    padding: 20px;
 }
 
 .categorised img{
@@ -44,4 +45,12 @@
 .menuF img{
     float: left;
     clear: left;
+}
+
+.small img{
+    width: 500px;
+}
+
+.row{
+    padding: 20px;
 }
