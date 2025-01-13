@@ -1,22 +1,27 @@
 
 
 .menuHero{
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('./img/menuHero.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)),url("./img/menuHero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     text-align: center;
 }
 
+.fs-1{
+    font-weight: bold !important;
+}
+
 .menuHero h1, .menuHero p{
     color: #E0CFBD;
 }
 
-.menuHero button{
+button{
     padding: 10px 15px;
     margin-bottom: 10px;
     border: none;
@@ -53,4 +58,18 @@
 
 .row{
     padding: 20px;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal a{
+    text-decoration: underline !important;
+    color: #876240 !important;
+    font-style: italic;
 }

@@ -30,18 +30,27 @@
                 <a class="nav-link" aria-current="page" href="#">Menus</a>
               </li>
               <li class="nav-item">
-                <button href="#signUpForm">Sign Up</button>
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item">
+                <button data-bs-toggle="modal" data-bs-target="#signUpForm">Sign Up</button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      <!-- all data temporary filler, js fetch api & postman needed -->
         <div class="container-fluid menuHero">
-            <h1>Yume Neko Menu</h1>
-            <p>Check out our menu! Scroll down to view by category or see the uncategorised menu with the button below.</p>
-            <form action="/menu" method="get">
-                <button type="submit" href="#uncategorised">Full Menu</button>
-            </form>
+            <h1 class="fs-1">Yume Neko Menu</h1>
+            <br>
+            <p class="fs-4">Check out our menu! Use the search bar above, scroll for categories,<br>or view the uncategorised menu with the button below.</p>
+            <br>
+            <button type="submit" href="#uncategorised" class="fs-4">Full Menu</button>
         </div>
         <div class="container-fluid categorised">
             <div class="row menuD">
@@ -89,6 +98,62 @@
             </div>
         </div>
     </div>
+
+  <div class="modal fade" id="signUpForm" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="registerPassword">
+            </div>
+            <div class="mb-3">
+              <label for="registerRePassword" class="form-label">Re-enter Password</label>
+              <input type="password" class="form-control" id="registerRePassword">
+            </div>
+            <p>Already have an account? <a data-bs-toggle="modal" data-bs-target="#signInForm">Sign in here!</a></p>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="signInForm" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sign In</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="signInEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="signInEmail" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="signInPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="signInPassword">
+            </div>
+            <p>Don't have an account? <a data-bs-toggle="modal" data-bs-target="#signUpForm">Register here!</a></p>
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="container" id="searchItems">
 
