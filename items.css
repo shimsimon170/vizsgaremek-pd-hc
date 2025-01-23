@@ -1,0 +1,60 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f5ef;
+    color: #5d4037;
+    margin: 0;
+    padding: 0;
+  }
+  .specialty-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .specialty-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #6d4c41;
+    font-family: 'Georgia', serif;
+  }
+  .specialty-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  .drink-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .drink-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .drink-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  .drink-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  .drink-card h3 {
+    font-size: 1.5rem;
+    color: #4e342e;
+    margin-bottom: 10px;
+  }
+  .drink-card p {
+    font-size: 1rem;
+    color: #5d4037;
+  }
+  .drink-card span {
+    font-weight: bold;
+    color: #795548;
+  }

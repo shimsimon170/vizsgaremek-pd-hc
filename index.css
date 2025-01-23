@@ -1,0 +1,127 @@
+body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.nav-item button {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px !important;
+    background-color: #362b13;
+    color: rgb(255, 255, 255);
+}
+
+.logo img{
+    width: 100px;
+    margin: auto 5px auto auto !important;
+    border-radius: 100%;
+}
+
+.logo h3{
+    margin: auto 10px auto 10px;
+}
+
+#navbarNav{
+    justify-content: end !important;
+    padding: 10px 0;
+    color: #362b13;
+    font-size: large;
+}
+
+.nav-item{
+    margin: auto 10px auto 10px !important;
+}
+
+.homeContainer {
+    background-color: #E0CFBD;
+    padding: 15px 15px 15px 15px !important;
+    justify-content: center !important;
+}
+
+.homeContainer h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.homeContainer .card{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    margin: auto;
+    
+}
+
+.card img{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+.footer-icons a {
+    color: white; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.footer-icons a:hover {
+    color: #362b13; 
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal a{
+    text-decoration: underline !important;
+    color: #876240 !important;
+    font-style: italic;
+}
+
+button{
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px !important;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+h1{
+    font-size: 25px;
+    margin-bottom: 20px;    
+}
+
+.flavourtext {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #362b13;
+    padding: 10px 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-learn-more:hover {
+    background: #cea77a;
+    transform: translateY(-2px);
+  }
