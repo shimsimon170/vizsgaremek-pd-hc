@@ -72,10 +72,10 @@
               <div class="col-lg-6">
                 <h2 id="food">Food</h2>
                 <p>Check out our tasty food items, all available for order and dine-in!</p>
-                <button class="menu-button">View Category</button>
+                <a class="nav-link" href="food.html"><button class="menu-button">View Category</button></a>
               </div>
             </div>
-            <div class="row popular">
+            <div class="row popular" id="popular">
               <h1 id="items">Popular Items</h1>
                 <div class="col-lg-6">
                     <img src="./img/menuSushi.jpg" alt="">
@@ -156,64 +156,6 @@
       </div>
     </div>
   </div>
- <!---
-   <div class="container" id="searchItems">
-
-        <h1>Menu</h1>
-
-        <form action="/menu" method="get">
-            <button type="submit">Get our menu</button>
-        </form>
-
-        <form action="/menu/search" method="get">
-            <input type="text" name="name" >
-            <button type="submit">Get items by name</button>
-        </form>
-
-        <form action="/menu" method="post">
-            <input type="text" name="name" placeholder="Name">
-            <input type="text" name="description" placeholder="Description">
-            <button type="submit">Post a snack request</button>
-        </form>
-    </div>
- -->
-   
-
-    <div class="container menu-container" id="searchItems">
-      <h1 class="menu-heading">🍽️ Discover Your Next Favorite Dish</h1>
-  
-      <div class="menu-actions">
-          <form action="/menu" method="get" class="menu-form">
-              <button type="submit" class="menu-button">View Full Menu</button>
-          </form>
-  
-          <form action="/menu/search" method="get" class="menu-form">
-              <input 
-                  type="text" 
-                  name="name" 
-                  placeholder="Search for a dish..." 
-                  class="menu-input"
-                  aria-label="Search by name">
-              <button type="submit" class="menu-button">🔍 Find Item</button>
-          </form>
-  
-          <form action="/menu" method="post" class="menu-form">
-              <input 
-                  type="text" 
-                  name="name" 
-                  placeholder="Dish Name" 
-                  class="menu-input"
-                  aria-label="Dish Name">
-              <input 
-                  type="text" 
-                  name="description" 
-                  placeholder="Dish Description" 
-                  class="menu-input"
-                  aria-label="Dish Description">
-              <button type="submit" class="menu-button">✨ Suggest a Snack</button>
-          </form>
-      </div>
-  </div>
     
   <div class="container-fluid">
     <footer
@@ -255,13 +197,13 @@
                 <a href="menus.html" class="text-white">Menu</a>
               </p>
               <p>
-                <a href="menu.html#drinks" class="text-white">Drinks</a>
+                <a href="drink.html" class="text-white">Drinks</a>
               </p>
               <p>
-                <a href="menu.html#food" class="text-white">Food</a>
+                <a href="food.html" class="text-white">Food</a>
               </p>
               <p>
-                <a href="menu.html#item" class="text-white">Popular Items</a>
+                <a href="menu.html#popular" class="text-white">Popular Items</a>
               </p>
             </div>
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
