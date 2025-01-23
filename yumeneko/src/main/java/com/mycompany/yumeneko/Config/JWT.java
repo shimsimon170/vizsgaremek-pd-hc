@@ -4,7 +4,7 @@
  */
 package com.mycompany.yumeneko.Config;
 
-import Exception.ExceptionLogger;
+import com.mycompany.yumeneko.Exception.ExceptionLogger;
 import com.mycompany.yumeneko.Model.Customers;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

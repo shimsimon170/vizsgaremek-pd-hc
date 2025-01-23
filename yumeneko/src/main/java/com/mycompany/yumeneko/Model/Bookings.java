@@ -30,60 +30,39 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "bookings")
 @NamedQueries({
-    @NamedQuery(name = "Event.findAll", query = "SELECT e FROM Bookings e"),
-    @NamedQuery(name = "Event.findById", query = "SELECT e FROM Bookings e WHERE e.id = :id"),
-    @NamedQuery(name = "Event.findByName", query = "SELECT e FROM Bookings e WHERE e.name = :name"),
-    @NamedQuery(name = "Event.findByPlaceId", query = "SELECT e FROM Bookings e WHERE e.placeId = :placeId"),
-    @NamedQuery(name = "Event.findByStartTime", query = "SELECT e FROM Bookings e WHERE e.startTime = :startTime"),
-    @NamedQuery(name = "Event.findByEndTime", query = "SELECT e FROM Bookings e WHERE e.endTime = :endTime"),
-    @NamedQuery(name = "Event.findByPicture", query = "SELECT e FROM Bookings e WHERE e.picture = :picture"),
-    @NamedQuery(name = "Event.findByIsDeleted", query = "SELECT e FROM Bookings e WHERE e.isDeleted = :isDeleted"),
-    @NamedQuery(name = "Event.findByCreatedAt", query = "SELECT e FROM Bookings e WHERE e.createdAt = :createdAt"),
-    @NamedQuery(name = "Event.findByDeletedAt", query = "SELECT e FROM Bookings e WHERE e.deletedAt = :deletedAt")})
+    @NamedQuery(name = "Bookings.findAll", query = "SELECT b FROM Bookings b"),
+    @NamedQuery(name = "Bookings.findById", query = "SELECT b FROM Bookings b WHERE b.booking_id = :booking_id"),
+    @NamedQuery(name = "Bookings.findByCustomer", query = "SELECT b FROM Bookings b WHERE b.customer_id = :customer_id"),
+    @NamedQuery(name = "Bookings.findByTable", query = "SELECT b FROM Bookings b WHERE e.table_id = :table_id"),
+    @NamedQuery(name = "Bookings.findByDate", query = "SELECT b FROM Bookings b WHERE e.booking_date = :booking_date"),
+    @NamedQuery(name = "Bookings.findByStatus", query = "SELECT b FROM Bookings b WHERE b.status = :status")})
 public class Bookings implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
+    @Column(name = "booking_id")
     private Integer id;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "name")
-    private String name;
+    @Column(name = "customer_id")
+    private int customer;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "place_id")
-    private int placeId;
+    @Column(name = "table_id")
+    private int table;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "start_time")
+    @Column(name = "booking_date")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date startTime;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "end_time")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date endTime;
+    private Date date;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
-    @Column(name = "picture")
-    private String picture;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "is_deleted")
-    private boolean isDeleted;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "created_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-    @Column(name = "deleted_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date deletedAt;
+    @Column(name = "status")
+    private String status;
 
     static EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_yumeneko_war_1.0-SNAPSHOTPU");
 
@@ -94,17 +73,13 @@ public class Bookings implements Serializable {
         EntityManager em = emf.createEntityManager();
 
         try {
-            Bookings e = em.find(Bookings.class, id);
+            Bookings b = em.find(Bookings.class, id);
 
-            this.id = e.getId();
-            this.name = e.getName();
-            this.placeId = e.getPlaceId();
-            this.startTime = e.getStartTime();
-            this.endTime = e.getEndTime();
-            this.picture = e.getPicture();
-            this.isDeleted = e.getIsDeleted();
-            this.createdAt = e.getCreatedAt();
-            this.createdAt = e.getCreatedAt();
+            this.id = b.getId();
+            this.customer = b.getCustomer();
+            this.table = b.getTable();
+            this.date = b.getDate();
+            this.status = b.getStatus();
         } catch (Exception ex) {
             System.err.println("Hiba: " + ex.getLocalizedMessage());
         } finally {
@@ -113,15 +88,12 @@ public class Bookings implements Serializable {
         }
     }
 
-    public Bookings(Integer id, String name, int placeId, Date startTime, Date endTime, String picture, boolean isDeleted, Date createdAt) {
+    public Bookings(Integer id, int customer, int table, Date date, String status) {
         this.id = id;
-        this.name = name;
-        this.placeId = placeId;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.picture = picture;
-        this.isDeleted = isDeleted;
-        this.createdAt = createdAt;
+        this.customer = customer;
+        this.table = table;
+        this.date = date;
+        this.status = status;
     }
 
     public Integer getId() {
@@ -132,68 +104,36 @@ public class Bookings implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getCustomer() {
+        return customer;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomer(int customer) {
+        this.customer = customer;
     }
 
-    public int getPlaceId() {
-        return placeId;
+    public int getTable() {
+        return table;
     }
 
-    public void setPlaceId(int placeId) {
-        this.placeId = placeId;
+    public void setTable(int table) {
+        this.table = table;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getDate() {
+        return date;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Date getEndTime() {
-        return endTime;
+    public String getStatus() {
+        return status;
     }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-
-    public boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(Date deletedAt) {
-        this.deletedAt = deletedAt;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -218,7 +158,7 @@ public class Bookings implements Serializable {
 
     @Override
     public String toString() {
-        return "com.iakk.backendvizsga.model.Event[ id=" + id + " ]";
+        return "com.mycompany.yumeneko.Model.Bookings[ id=" + id + " ]";
     }
 
 }

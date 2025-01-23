@@ -26,11 +26,11 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "tables")
 @NamedQueries({
-    @NamedQuery(name = "Place.findAll", query = "SELECT t FROM Tables t"),
-    @NamedQuery(name = "Place.findById", query = "SELECT t FROM Tables t WHERE t.table_id = :table_id"),
-    @NamedQuery(name = "Place.findByNumber", query = "SELECT t FROM Tables t WHERE t.table_number = :table_number"),
-    @NamedQuery(name = "Place.findByCapacity", query = "SELECT t FROM Tables t WHERE t.capacity = :capacity"),
-    @NamedQuery(name = "Place.findByIsAvailable", query = "SELECT t FROM Tables t WHERE t.is_available = :is_available")})
+    @NamedQuery(name = "Tables.findAll", query = "SELECT t FROM Tables t"),
+    @NamedQuery(name = "Tables.findById", query = "SELECT t FROM Tables t WHERE t.id = :table_id"),
+    @NamedQuery(name = "Tables.findByNumber", query = "SELECT t FROM Tables t WHERE t.number = :table_number"),
+    @NamedQuery(name = "Tables.findByCapacity", query = "SELECT t FROM Tables t WHERE t.capacity = :capacity"),
+    @NamedQuery(name = "Tables.findByIsAvailable", query = "SELECT t FROM Tables t WHERE t.isAvailable = :is_available")})
 public class Tables implements Serializable {
 
     private static final long serialVersionUID = 1L;

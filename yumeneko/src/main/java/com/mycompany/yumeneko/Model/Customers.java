@@ -41,21 +41,21 @@ import org.json.JSONObject;
 @Table(name = "customers")
 @NamedQueries({
     @NamedQuery(name = "Customers.findAll", query = "SELECT u FROM Customers u"),
-    @NamedQuery(name = "Customers.findById", query = "SELECT u FROM Customers u WHERE u.id = :id"),
-    @NamedQuery(name = "Customers.findByEmail", query = "SELECT u FROM Customers u WHERE u.email = :email"),
-    @NamedQuery(name = "Customers.findByPhoneNumber", query = "SELECT u FROM Customers u WHERE u.phoneNumber = :phoneNumber"),
+    @NamedQuery(name = "Customers.findById", query = "SELECT u FROM Customers u WHERE u.id = :customer_id"),
     @NamedQuery(name = "Customers.findByName", query = "SELECT u FROM Customers u WHERE u.name = :name"),
-    @NamedQuery(name = "Customers.findByIsAdmin", query = "SELECT u FROM Customers u WHERE u.isAdmin = :isAdmin"),
-    @NamedQuery(name = "Customers.findByIsDeleted", query = "SELECT u FROM Customers u WHERE u.isDeleted = :isDeleted"),
-    @NamedQuery(name = "Customers.findByCreatedAt", query = "SELECT u FROM Customers u WHERE u.createdAt = :createdAt"),
-    @NamedQuery(name = "Customers.findByDeletedAt", query = "SELECT u FROM Customers u WHERE u.deletedAt = :deletedAt")})
+    @NamedQuery(name = "Customers.findByPhoneNumber", query = "SELECT u FROM Customers u WHERE u.phoneNumber = :phone"),
+    @NamedQuery(name = "Customers.findByEmail", query = "SELECT u FROM Customers u WHERE u.email = :email"),
+    @NamedQuery(name = "Customers.findByIsAdmin", query = "SELECT u FROM Customers u WHERE u.isAdmin = :is_admin"),
+    @NamedQuery(name = "Customers.findByIsDeleted", query = "SELECT u FROM Customers u WHERE u.isDeleted = :is_deleted"),
+    @NamedQuery(name = "Customers.findByCreatedAt", query = "SELECT u FROM Customers u WHERE u.createdAt = :created_at"),
+    @NamedQuery(name = "Customers.findByDeletedAt", query = "SELECT u FROM Customers u WHERE u.deletedAt = :deleted_at")})
 public class Customers implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
+    @Column(name = "customer_id")
     private Integer id;
     @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
@@ -66,7 +66,7 @@ public class Customers implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
-    @Column(name = "phone_number")
+    @Column(name = "phone")
     private String phoneNumber;
     @Basic(optional = false)
     @NotNull
@@ -97,7 +97,11 @@ public class Customers implements Serializable {
 
     static EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_yumeneko_war_1.0-SNAPSHOTPU");
 
-public Customers(Integer id) {
+    public Customers(){
+        
+    }
+    
+    public Customers(Integer id) {
         EntityManager em = emf.createEntityManager();
 
         try {
@@ -107,7 +111,7 @@ public Customers(Integer id) {
             this.email = u.getEmail();
             this.phoneNumber = u.getPhoneNumber();
             this.name = u.getName();
-            this.password = u.getPassword();
+            //this.password = u.getPassword();
             this.isAdmin = u.getIsAdmin();
             this.isDeleted = u.getIsDeleted();
             this.createdAt = u.getCreatedAt();
@@ -129,6 +133,10 @@ public Customers(Integer id) {
         this.isDeleted = isDeleted;
         this.createdAt = createdAt;
         this.deletedAt = deletedAt;
+    }
+
+    public Customers(String string, String string0, String string1, String string2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Integer getId() {
@@ -271,7 +279,7 @@ public Customers(Integer id) {
         }
     }
     
-    public Boolean register(Customers u){
+    public Boolean registerCustomer(Customers u){
     EntityManager em= emf.createEntityManager();
     try{
         StoredProcedureQuery spq = em.createStoredProcedureQuery("registration");

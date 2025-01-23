@@ -27,7 +27,7 @@ import org.json.JSONObject;
  *
  * @author patak
  */
-    @Path("customer")
+@Path("customer")
 public class UserController {
 
     @Context
@@ -54,21 +54,19 @@ public class UserController {
     public Response login(String bodyString){
         JSONObject body = new JSONObject(bodyString);
         
-         Customers u = new Customers(
-                body.getString("email"),
-                body.getString("phoneNumber"),
-                body.getString("name"),
-                body.getString("password")
-        );
-        
         JSONObject obj = layer.login(body.getString("email"), body.getString("password"));
         return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
     }
     
+    /**
+     *
+     * @param bodyString
+     * @return
+     */
     @POST
-    @Path("registerUser")
+    @Path("registerCustomer")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response registerUser(String bodyString){
+    public Response registerCustomer(String bodyString){
         JSONObject body = new JSONObject(bodyString);
         
         Customers u = new Customers (
@@ -78,7 +76,7 @@ public class UserController {
                 body.getString("password")
         );
         
-        JSONObject obj = layer.registerUser(u);
+        JSONObject obj = layer.registerCustomer(u);
         return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
     }
     

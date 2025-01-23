@@ -5,7 +5,6 @@
 package com.mycompany.yumeneko.Model;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,8 +17,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Persistence;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -29,12 +26,12 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "order_items")
 @NamedQueries({
-    @NamedQuery(name = "Ticket.findAll", query = "SELECT ot FROM OrderItems ot"),
-    @NamedQuery(name = "Ticket.findByOrderItemId", query = "SELECT ot FROM OrderItems ot WHERE ot.order_item_id = :order_item_id"),
-    @NamedQuery(name = "Ticket.findByOrderId", query = "SELECT ot FROM OrderItems ot WHERE ot.order_id = :order_id"),
-    @NamedQuery(name = "Ticket.findByMenuItemId", query = "SELECT ot FROM OrderItems ot WHERE ot.menu_item_id = :menu_item_id"),
-    @NamedQuery(name = "Ticket.findByQuantity", query = "SELECT ot FROM OrderItems ot WHERE ot.quantity = :quantity"),
-    @NamedQuery(name = "Ticket.findByPrice", query = "SELECT ot FROM OrderItems ot WHERE ot.price = :price")})
+    @NamedQuery(name = "OrderItems.findAll", query = "SELECT ot FROM OrderItems ot"),
+    @NamedQuery(name = "OrderItems.findByOrderItemId", query = "SELECT ot FROM OrderItems ot WHERE ot.id = :order_item_id"),
+    @NamedQuery(name = "OrderItems.findByOrderId", query = "SELECT ot FROM OrderItems ot WHERE ot.orderId = :order_id"),
+    @NamedQuery(name = "OrderItems.findByMenuItemId", query = "SELECT ot FROM OrderItems ot WHERE ot.menuId = :menu_item_id"),
+    @NamedQuery(name = "OrderItems.findByQuantity", query = "SELECT ot FROM OrderItems ot WHERE ot.amount = :quantity"),
+    @NamedQuery(name = "OrderItems.findByPrice", query = "SELECT ot FROM OrderItems ot WHERE ot.price = :price")})
 public class OrderItems implements Serializable {
 
     private static final long serialVersionUID = 1L;

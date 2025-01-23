@@ -30,10 +30,10 @@ import javax.validation.constraints.NotNull;
 @Table(name = "Orders")
 @NamedQueries({
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o"),
-    @NamedQuery(name = "Orders.findById", query = "SELECT o FROM Orders o WHERE o.order_id = :order_id"),
-    @NamedQuery(name = "Orders.findByCustomerId", query = "SELECT o FROM Orders o WHERE o.customer_id = :customer_id"),
-    @NamedQuery(name = "Orders.findByOrderDate", query = "SELECT o FROM Orders o WHERE o.order_date = :order_date"),
-    @NamedQuery(name = "Orders.findByAmount", query = "SELECT o FROM Orders o WHERE o.total_amount = :total_amount"),
+    @NamedQuery(name = "Orders.findById", query = "SELECT o FROM Orders o WHERE o.id = :order_id"),
+    @NamedQuery(name = "Orders.findByCustomerId", query = "SELECT o FROM Orders o WHERE o.userId = :customer_id"),
+    @NamedQuery(name = "Orders.findByOrderDate", query = "SELECT o FROM Orders o WHERE o.orderDate = :order_date"),
+    @NamedQuery(name = "Orders.findByAmount", query = "SELECT o FROM Orders o WHERE o.amount = :total_amount"),
     @NamedQuery(name = "Orders.findByStatus", query = "SELECT o FROM Orders o WHERE o.status = :status")})
 public class Orders implements Serializable {
 

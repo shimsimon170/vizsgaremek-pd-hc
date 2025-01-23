@@ -89,7 +89,7 @@ public class UserService {
         return toReturn;
     }
     
-    public JSONObject registerUser(Customers u) {
+    public JSONObject registerCustomer(Customers u) {
         JSONObject toReturn = new JSONObject();
         String status = "success";
         int statusCode = 200;
@@ -104,8 +104,8 @@ public class UserService {
                     status = "UserAlreadyExists";
                     statusCode = 417;
                 } else {
-                    boolean registerUser = layer.registerUser(u);
-                    if(registerUser == false) {
+                    boolean registerCustomer = layer.registerCustomer(u);
+                    if(registerCustomer == false) {
                         status = "fail";
                         statusCode = 417;
                     }
