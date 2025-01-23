@@ -19,13 +19,13 @@
     color: #8d6e63;
     margin-bottom: 30px;
   }
-  .drink-grid {
+  .item-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
-  .drink-card {
+  .item-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -34,27 +34,27 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .drink-card:hover {
+  .item-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   }
-  .drink-card img {
+  .item-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
   }
-  .drink-card h3 {
+  .item-card h3 {
     font-size: 1.5rem;
     color: #4e342e;
     margin-bottom: 10px;
   }
-  .drink-card p {
+  .item-card p {
     font-size: 1rem;
     color: #5d4037;
   }
-  .drink-card span {
+  .item-card span {
     font-weight: bold;
     color: #795548;
   }
