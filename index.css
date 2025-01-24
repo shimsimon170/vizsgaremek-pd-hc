@@ -37,14 +37,18 @@ body {
 
 .homeContainer {
     background-color: #E0CFBD;
-    padding: 15px 15px 15px 15px !important;
-    justify-content: center !important;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
 .homeContainer h2{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #4a3b32;
+    margin-bottom: 20px;
 }
 
 .homeContainer .card{
@@ -99,8 +103,10 @@ button{
 }
 
 h1{
-    font-size: 25px;
-    margin-bottom: 20px;    
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px; 
+    color: #4a3b32 !important;
 }
 
 .flavourtext {

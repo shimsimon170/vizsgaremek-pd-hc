@@ -145,3 +145,8 @@ img:hover{
     background-color: #cea77a;
     transform: scale(1.1);
 }
+
+.fs-1{
+    color: white !important;
+    text-shadow: 2px 2px #000000;
+}

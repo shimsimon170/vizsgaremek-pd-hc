@@ -3,8 +3,11 @@
 }
 
 .about-container {
-    background: linear-gradient(135deg, #f5e6d3 0%, #f3d5c0 100%);
+    background: linear-gradient(135deg, #fdf2e4 0%, #c9ab95 100%);
     padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
   }
   
   .about-text h1 {
