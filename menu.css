@@ -15,6 +15,8 @@
 
 .fs-1{
     font-weight: bold !important;
+    color: white !important;
+    text-shadow: 2px 2px #000000;
 }
 
 .menuHero h1, .menuHero p{
@@ -144,9 +146,4 @@ img:hover{
 .menu-button:hover {
     background-color: #cea77a;
     transform: scale(1.1);
-}
-
-.fs-1{
-    color: white !important;
-    text-shadow: 2px 2px #000000;
 }
