@@ -1,6 +1,6 @@
 -- Create the database
-CREATE DATABASE IF NOT EXISTS CatCafeDB;
-USE CatCafeDB;
+CREATE DATABASE IF NOT EXISTS yumeneko;
+USE yumeneko;
 
 -- Table for customers
 CREATE TABLE `customers` (
