@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     function jumpToTitle(searchTerm) {
-        const titles = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+        const titles = document.querySelectorAll("h1, h2, h3, h4, h5, h6, li");
 
         for (let title of titles) {
             if (title.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
