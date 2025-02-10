@@ -1,0 +1,7 @@
+{
+  "name": "Simon Riley",
+  "email": "simonyumeneko@gmail.com",
+  "phone": "1-212-1234567",
+  "password": "megeszlek52",
+  "is_admin": "1"
+}
