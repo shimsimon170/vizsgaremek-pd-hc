@@ -3,13 +3,17 @@ CREATE DATABASE IF NOT EXISTS CatCafeDB;
 USE CatCafeDB;
 
 -- Table for customers
-CREATE TABLE customers (
-    customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    phone VARCHAR(15),
-    email VARCHAR(100),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+CREATE TABLE `customers` (
+  `customer_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `is_admin` tinyint(1) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` datetime DEFAULT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Table for menu items
 CREATE TABLE menu_items (
@@ -64,10 +68,11 @@ CREATE TABLE bookings (
     FOREIGN KEY (table_id) REFERENCES tables(table_id) ON DELETE SET NULL
 );
 
-INSERT INTO customers (name, phone, email) VALUES
-('Alice Johnson', '123-456-7890', 'alice.j@example.com'),
-('Bob Smith', '987-654-3210', 'bob.s@example.com'),
-('Charlie Brown', '555-123-4567', 'charlie.b@example.com');
+INSERT INTO `customers` (`customer_id`, `name`, `phone`, `email`, `is_admin`, `is_deleted`, `created_at`, `deleted_at`, `password`) VALUES
+(1, 'John Doe', '123-456-7890', 'johndoe@example.com', 0, 0, NOW(), NULL, 'hashed_password_1'),
+(2, 'Dora Kazamatsuri', '01-234-567-88', 'yumeneko@gmail.com', 1, 0, NOW(), NULL, 'hashed_password_2'),
+(3, 'Alice Johnson', '555-123-4567', 'alicejohnson@example.com', 0, 0, NOW(), NULL, 'hashed_password_3');
+
 
 INSERT INTO menu_items (name, description, price, category, is_available) VALUES
 ('Matcha Latte', 'A smooth and creamy blend of matcha and milk for a delightful treat.', 4.50, 'Drinks', 1),
@@ -110,6 +115,6 @@ INSERT INTO orders (customer_id, order_date, total_amount, status) VALUES
 (3, '2024-12-05 11:30:00', 7.50, 'Pending');
 
 INSERT INTO order_items (order_id, menu_item_id, quantity, price) VALUES
-(1, 1, 1, 4.50), -- Cappuccino for Alice
-(1, 2, 1, 2.75), -- Mango Mochi for Alice
-(2, 4, 2, 6.00); -- Macha for Charlie
+(1, 1, 1, 4.50),
+(1, 2, 1, 2.75),
+(2, 4, 2, 6.00);
