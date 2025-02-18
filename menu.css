@@ -168,3 +168,16 @@ img:hover{
     text-align: center;
     margin-top: 10px;
 }
+
+@media screen and (max-width:  700px){
+    .menuD img, .menuF img, .small img{
+        width: 20rem;
+        float: none;
+        margin: 0.9rem auto auto auto;
+    }
+
+    .categorised p, .categorised h1, .categorised h3{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
