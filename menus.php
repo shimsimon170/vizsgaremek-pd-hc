@@ -52,14 +52,14 @@
             <br>
             <p class="fs-4">Check out our menu! Use the search bar above, scroll for categories,<br>or view the uncategorised menu with the button below.</p>
             <br>
-            <a class="nav-link" href="fullmenu.html"><button type="submit" class="menu-button">View Full Menu</button></a>
+            <a class="nav-link" href="fullmenu.php"><button type="submit" class="menu-button">View Full Menu</button></a>
           </div>
         <div class="container-fluid categorised">
             <div class="row menuD">
               <div class="col-lg-6">
                 <h2 id="drinks" class="menu-title">Drinks</h2>
                 <p class="menu-description">Check out our delicious drinks, all available for order and dine-in!</p>
-                <a class="nav-link" href="drink.html"><button class="menu-button">View Category</button></a>
+                <a class="nav-link" href="drink.php"><button class="menu-button">View Category</button></a>
               </div>
               <div class="col-lg-6">
                 <img src="./img/drinksIconimg.png" alt="drinks" title="drinks">
@@ -72,14 +72,14 @@
               <div class="col-lg-6">
                 <h2 id="food" class="menu-title">Food</h2>
                 <p class="menu-description">Check out our tasty food items, all available for order and dine-in!</p>
-                <a class="nav-link" href="food.html"><button class="menu-button">View Category</button></a>
+                <a class="nav-link" href="food.php"><button class="menu-button">View Category</button></a>
               </div>
             </div>
             <div class="row menuD">
               <div class="col-lg-6">
                 <h2 id="desserts" class="menu-title">Desserts</h2>
                 <p class="menu-description">Check out our delicious desserts, all available for order and dine-in!</p>
-                <a class="nav-link" href="dessert.html"><button class="menu-button">View Category</button></a>
+                <a class="nav-link" href="dessert.php"><button class="menu-button">View Category</button></a>
               </div>
               <div class="col-lg-6">
                 <img src="./img/dessertIcon.png" alt="desserts" title="desserts">
@@ -200,16 +200,16 @@
                   style="width: 60px; background-color: #cea77a; height: 2px"
                   />
               <p>
-                <a href="menus.html" class="text-white">Menu</a>
+                <a href="menus.php" class="text-white">Menu</a>
               </p>
               <p>
-                <a href="drink.html" class="text-white">Drinks</a>
+                <a href="drink.php" class="text-white">Drinks</a>
               </p>
               <p>
-                <a href="food.html" class="text-white">Food</a>
+                <a href="food.php" class="text-white">Food</a>
               </p>
               <p>
-                <a href="dessert.html" class="text-white">Desserts</a>
+                <a href="dessert.php" class="text-white">Desserts</a>
               </p>
             </div>
             

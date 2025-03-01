@@ -47,7 +47,7 @@
                 <h1>Welcome to The Yume Neko Café Webpage!</h1>
                 <p class="flavourtext">Step into the enchanting world of Yume Neko Café, where dreams and feline magic come alive! Our café offers a harmonious blend of Japanese-inspired charm, mouthwatering treats, and the heartwarming companionship of our delightful cats. Whether you seek a serene escape, a cozy spot to unwind, or simply the joy of connecting with our furry friends, Yume Neko Café promises an unforgettable experience.
                   Explore our menu, meet our lovable cats, and discover why we're the purr-fect destination for cat lovers and dreamers alike. Your journey to tranquility begins here—welcome to Yume Neko Café! 🐈</p>
-                <a href="about.html" class="btn-learn-more">Learn More</a>
+                <a href="about.php" class="btn-learn-more">Learn More</a>
             </div>
         </div>
         <br>
@@ -185,17 +185,17 @@
                     style="width: 60px; background-color: #cea77a; height: 2px"
                     />
                     <p>
-                      <a href="menus.html" class="text-white">Menu</a>
-                    </p>
-                    <p>
-                      <a href="drink.html" class="text-white">Drinks</a>
-                    </p>
-                    <p>
-                      <a href="food.html" class="text-white">Food</a>
-                    </p>
-                    <p>
-                      <a href="dessert.html" class="text-white">Desserts</a>
-                    </p>
+                <a href="menus.php" class="text-white">Menu</a>
+              </p>
+              <p>
+                <a href="drink.php" class="text-white">Drinks</a>
+              </p>
+              <p>
+                <a href="food.php" class="text-white">Food</a>
+              </p>
+              <p>
+                <a href="dessert.php" class="text-white">Desserts</a>
+              </p>
               </div>
               
               <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">

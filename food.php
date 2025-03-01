@@ -197,18 +197,18 @@
                       class="mb-4 mt-0 d-inline-block mx-auto"
                       style="width: 60px; background-color: #cea77a; height: 2px"
                       />
-                  <p>
-                    <a href="menus.html" class="text-white">Menu</a>
-                  </p>
-                  <p>
-                    <a href="drink.html" class="text-white">Drinks</a>
-                  </p>
-                  <p>
-                    <a href="food.html" class="text-white">Food</a>
-                  </p>
-                  <p>
-                    <a href="dessert.html" class="text-white">Desserts</a>
-                  </p>
+                      <p>
+                <a href="menus.php" class="text-white">Menu</a>
+              </p>
+              <p>
+                <a href="drink.php" class="text-white">Drinks</a>
+              </p>
+              <p>
+                <a href="food.php" class="text-white">Food</a>
+              </p>
+              <p>
+                <a href="dessert.php" class="text-white">Desserts</a>
+              </p>
                 </div>
                 
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
