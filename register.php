@@ -1,47 +1,46 @@
 <?php
-// Include the database connection
-include('db.php');
+require 'db.php'; // Adatbázis kapcsolat
 
-// Check if the form is submitted
+// Hibaüzenetek engedélyezése
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get the form data
+    $name = $_POST['name'];
+    $phone = $_POST['phone']; // Telefonszám beolvasása
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $rePassword = $_POST['rePassword'];
+    $password = $_POST['password']; // Jelszó beolvasása
 
-    // Validate that the passwords match
-    if ($password !== $rePassword) {
-        echo "Passwords do not match.";
-        exit;
-    }
-
-    // Hash the password for security
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    // Prepare SQL query to check if the email already exists
+    // Ellenőrizzük, hogy az email már létezik-e
     $stmt = $conn->prepare("SELECT * FROM customers WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
-
+    
     if ($result->num_rows > 0) {
-        echo "An account with this email already exists.";
+        echo "Ez az email már regisztrálva van.";
     } else {
-        // Insert new user into the database
-        $stmt = $conn->prepare("INSERT INTO customers (email, password, created_at) VALUES (?, ?, NOW())");
-        $stmt->bind_param("ss", $email, $hashedPassword);
+        // Jelszó hash-elése
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $is_admin = 0; // Alapértelmezett érték, ha nem admin
 
+        // Felhasználó hozzáadása
+        $stmt = $conn->prepare("INSERT INTO customers (name, phone, email, password, is_admin) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssi", $name, $phone, $email, $hashed_password, $is_admin);
+        
         if ($stmt->execute()) {
-            // Redirect to the menu page upon successful registration
-            header("Location: menus.php");
-            exit();
+            echo "Sikeres regisztráció!";
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Hiba történt a regisztráció során: " . $stmt->error;
         }
     }
-
-    // Close statement and connection
-    $stmt->close();
-    $conn->close();
 }
 ?>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Név" required>
+    <input type="text" name="phone" placeholder="Telefonszám" required> <!-- Telefonszám mező hozzáadása -->
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Jelszó" required>
+    <button type="submit">Regisztrálj</button>
+</form>
