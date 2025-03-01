@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 $host = "localhost";
 $user = "root";
 $pass = "root";
-$dbname = "testdb";
+$dbname = "yumeneko";
 
 // Kapcsolódás
 $conn = new mysqli($host, $user, $pass, $dbname);
