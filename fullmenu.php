@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once 'web.php'; ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -208,7 +209,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-              <form method="POST" action="register.php">
+              <form action="/register" method="POST">
                 <div class="mb-3">
                     <label for="registerName" class="form-label">Name</label>
                     <input type="text" class="form-control" id="registerName" name="name" required>
@@ -246,7 +247,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="login.php">
+          <form action="/login" method="POST">
             <div class="mb-3">
                 <label for="signInEmail" class="form-label">Email Address</label>
                 <input type="email" class="form-control" id="signInEmail" name="email" aria-describedby="emailHelp" required>

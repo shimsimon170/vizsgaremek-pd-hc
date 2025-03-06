@@ -132,4 +132,11 @@ h1{
     transform: translateY(-2px);
   }
 
-  
+  #signUpForm a:hover, #signInForm a:hover{
+    cursor: pointer;
+  }
+
+  #signUpForm .btn, #signInForm .btn{
+    border: none;
+    background-color: #000000 !important;
+  }
