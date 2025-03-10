@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Config.php';
+require_once __DIR__ . "/../Controller/Config.php";
 
 class Customer{
     private $id;
@@ -44,29 +44,28 @@ class Customer{
     
     public function setIsAdmin( $is_admin): void {$this->is_admin = $is_admin;}
 
-	public static function registerCustomer(Cutomer $customer){
-        $config = new Config();
-        $connection = $config->getConnection();
+	public static function registerCustomer(Customer $customer){
+        $sql = "CALL registerCustomer();";
+		$dbResult = $dbCon->query($sql);
+		$result = $dbResult->fetch_all(MYSQLI_ASSOC);
 
-        $name = $customer->getName();
-        $phone = $customer->getPhone();
-        $email = $customer->getEmail();
-        $password = $customer->getPassword();
-        $is_admin = $customer->getIsAdmin();
-
-        $sql = "INSERT INTO `customer` (name,email,phone,password,is_admin) VALUES ('$name','$email','$phone','$password','$is_admin');";
-
-        return mysqli_query($connection,$sql);
+        return $result;
     }
 
-    public static function Login(string $email){
-        $config = new Config();
-        $connection = $config->getConnection();
+    public static function Login(){
+        $sql = "CALL login();";
+		$dbResult = $dbCon->query($sql);
+		$result = $dbResult->fetch_all(MYSQLI_ASSOC);
 
-        $sql = "INSERT INTO `customers` (`email`) VALUES ('{$customer->getEmail()}";
-        $mySqlResponse = mysqli_query($connection,$sql);
+        return $result;
+    }
 
-        $email = $customer->getEmail();
+    public static function getAllCustomers(){
+		$sql = "CALL getAllCustomers();";
+		$dbResult = $dbCon->query($sql);
+		$result = $dbResult->fetch_all(MYSQLI_ASSOC);
+
+		return $result;
     }
 	
 }

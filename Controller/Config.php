@@ -2,7 +2,7 @@
 
 class Config {
 
-    private $dbCon;
+    public $dbCon;
 
     public function __construct()
     {

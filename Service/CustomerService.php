@@ -1,10 +1,10 @@
 <?php
-require_once "Customer.php";
+require_once __DIR__ . "/../Model/Customers.php";
 
 class CustomerService
 {
 
-    static function registerCustomer(Customer $customer)
+    public static function registerCustomer(Customer $customer)
     {
         $name = $customer->getName();
         $phone = $customer->getPhone();
@@ -38,10 +38,10 @@ class CustomerService
             ];
         }
     }
-    static function login($email, $password)
+    public static function login($email, $password)
     {
         if ($email && $password){
-            $ShadePassword = Customer:: login($email);
+            $ShadePassword = Customer::login($email);
             $customer->setPassword($hashedPassword);
             $modelResult = Customer::registerCustomer($customer);
             
@@ -49,13 +49,13 @@ class CustomerService
             if ($modelResult) {
                 return [
                     'status' => 200,
-                    'message' => 'User Registered',
+                    'message' => 'Successful login',
                 ];
 
             } else {
                 return [
                     'status' => 500,
-                    'message' => 'Registration failed',
+                    'message' => 'Login failed',
                 ];
             }
 
@@ -65,6 +65,11 @@ class CustomerService
                 'message' => 'Missing Credentials',
             ];
         }
+    }
+
+    public static function getAllCustomers(){
+        $modelResult = Customers::getAllCustomers();
+        return $modelResult;
     }
         
     }
