@@ -19,6 +19,7 @@ class CustomerService
             
 
             if ($modelResult) {
+                header("Location: menus.php");
                 return [
                     'status' => 200,
                     'message' => 'User Registered',
@@ -67,9 +68,9 @@ class CustomerService
         }
     }
 
-    public static function getAllCustomers(){
-        $modelResult = Customers::getAllCustomers();
-        return $modelResult;
-    }
+    // public static function getAllCustomers(){
+    //     $modelResult = Customers::getAllCustomers();
+    //     return $modelResult;
+    // }
         
     }

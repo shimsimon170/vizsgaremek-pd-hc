@@ -21,9 +21,9 @@ class BaseController{
                     ];
                 }
                 break;
-            case "/movies":
+            case "/register":
                 if($_SERVER["REQUEST_METHOD"] == "GET"){
-                    $result = MovieController::getAllMovies();
+                    $result = CustomerController::registerCustomer();
                 }else{
                     $result = [
                         "status" => "error",

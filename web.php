@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . "/./Controller/Router.php";
-require_once __DIR__ . "/./Controller/CustomerController.php";
+require_once __DIR__ . "../Controller/Router.php";
+require_once __DIR__ . "../Controller/CustomerController.php";
 
 Router::get("/",function($request,$response){
     header("Location: homepage.php"); 
@@ -9,7 +9,7 @@ Router::get("/",function($request,$response){
 
 Router::post("/register",function($request,$response){
     return CustomerController::registerCustomer($request);
-    header("Location: menus.php"); 
+     
     exit();
 });
 
