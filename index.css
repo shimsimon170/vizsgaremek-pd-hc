@@ -79,28 +79,7 @@ body {
     color: #362b13; 
 }
 
-.modal-body{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
-}
 
-.modal a{
-    text-decoration: underline !important;
-    color: #876240 !important;
-    font-style: italic;
-}
-
-button{
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 20px !important;
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-}
 
 h1{
     font-family: 'Cinzel', serif;
@@ -132,15 +111,6 @@ h1{
     transform: translateY(-2px);
   }
 
-  #signUpForm a:hover, #signInForm a:hover{
-    cursor: pointer;
-  }
-
-  #signUpForm .btn, #signInForm .btn{
-    border: none;
-    background-color: #000000 !important;
-  }
-
 .bi-search{
     color: #000;
 }
@@ -149,3 +119,6 @@ h1{
     background-color: rgba(255, 255, 255, 0.0) !important;
     border: 0px;
 }
+
+
+

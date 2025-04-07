@@ -43,10 +43,15 @@
                   </form>
                 </div>
               </li>
-              <li class="nav-item">
-                <button data-bs-toggle="modal" data-bs-target="#signUpForm">Sign Up</button>
-              </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="btn btn-outline-dark rounded-pill px-4 me-2" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-dark rounded-pill px-4" href="register.php">Register</a>
+                </li>
+              </ul>
           </div>
         </div>
       </nav>

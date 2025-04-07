@@ -33,11 +33,15 @@
               <li class="nav-item">
                 <a class="nav-link" href="menus.php">Menus</a>
               </li>
-
-              <li class="nav-item">
-                <button data-bs-toggle="modal" data-bs-target="#signUpForm">Sign Up</button>
-              </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="btn btn-outline-dark rounded-pill px-4 me-2" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-dark rounded-pill px-4" href="register.php">Register</a>
+                </li>
+              </ul>
           </div>
         </div>
       </nav>
@@ -91,71 +95,6 @@
             </div>
         </div>
     </div>
-    
-    <div class="modal fade" id="signUpForm" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Sign Up</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-              <form action="/register" method="POST">
-                <div class="mb-3">
-                    <label for="registerName" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="registerName" name="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="registerPhone" class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" id="registerPhone" name="phone" required>
-                </div>
-                <div class="mb-3">
-                    <label for="registerEmail" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="registerEmail" name="email" aria-describedby="emailHelp" required>
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="registerPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="registerPassword" name="password" required>
-                </div>
-                <div class="mb-3">
-                    <label for="registerRePassword" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="registerRePassword" name="re_password" required>
-                </div>
-                <p>Already have an account? <a data-bs-toggle="modal" data-bs-target="#signInForm">Sign in here!</a></p>
-                <button type="submit" class="btn btn-primary">Register</button>
-            </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="signInForm" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Sign In</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="/login" method="POST">
-            <div class="mb-3">
-                <label for="signInEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="signInEmail" name="email" aria-describedby="emailHelp" required>
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="signInPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="signInPassword" name="password" required>
-            </div>
-            <p>Don't have an account? <a data-bs-toggle="modal" data-bs-target="#signUpForm">Register here!</a></p>
-            <button type="submit" class="btn btn-primary">Sign In</button>
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
     
     <div class="container-fluid">
       <footer
