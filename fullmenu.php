@@ -43,6 +43,12 @@
                 </form>
               </div>
             </li>
+            <li class="nav-item">
+                  <a class="nav-link" href="#" id="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                      <i class="fas fa-shopping-cart"></i>
+                      <span class="badge bg-danger" id="item-count">0</span>
+                  </a>
+              </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -55,7 +61,26 @@
           </div>
         </div>
       </nav>
-
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="cart-items" class="list-group">
+                          </ul>
+                          <hr>
+                          <h5>Total Price: <span id="total-price">$0.00</span></h5>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
       <div class="menuContainer"></div>
       <section class="menu-section">
         <div class="container">
@@ -278,6 +303,7 @@
   <script src="server.js"></script> 
   <script src="signin.js"></script> 
   <script src="register.js"></script> 
+  <script src="cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

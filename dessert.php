@@ -43,6 +43,12 @@
                   </form>
                 </div>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#" id="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                      <i class="fas fa-shopping-cart"></i>
+                      <span class="badge bg-danger" id="item-count">0</span>
+                  </a>
+              </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -56,61 +62,95 @@
         </div>
       </nav>
 
+          <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="cart-items" class="list-group">
+                          </ul>
+                          <hr>
+                          <h5>Total Price: <span id="total-price">$0.00</span></h5>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
       <section class="specialty-section">
         <h1 class="specialty-title"> Desserts</h1>
         <p class="specialty-description">Discover our unique and delicious specialty desserts that are perfect for any occasion!</p>
-    
         <div class="item-grid">
-          <div class="item-card">
-            <img src="./img/cookies.jpg" alt="Cat Cookies">
-            <h3>Cat Cookies</h3>
-            <p>Adorably shaped buttery cookies with a hint of vanilla—perfect for a sweet snack.</p>
-            <p><span>$3.50</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/macarons.jpg" alt="Meow-Macarons">
-            <h3>Meow-Macarons</h3>
-            <p>Colorful macarons in delightful flavors like vanilla, chocolate, and strawberry.</p>
-            <p><span>$4.50</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/pawbrownie.jpg" alt="Paw-some Brownie">
-            <h3>Paw-some Brownie</h3>
-            <p>A rich and fudgy chocolate brownie with a paw-shaped design.</p>
-            <p><span>$5.00</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/cupcake.jpg" alt="Cat Cupcake">
-            <h3>Cat Cupcake</h3>
-            <p>A fluffy cupcake with creamy frosting, topped with a cute cat face decoration.</p>
-            <p><span>$3.00</span></p>
-          </div>
-    
-          <div class="item-card">
-            <img src="./img/machamochi.jpg" alt="Matcha Mochi">
-            <h3>Matcha Mochi</h3>
-            <p>Soft and chewy rice cakes infused with the earthy sweetness of matcha.</p>
-            <p><span>$6.00</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/strawmochi.jpg" alt="Strawberry Mochi">
-            <h3>Strawberry Mochi</h3>
-            <p>A sweet and fruity treat with strawberry-flavored filling.</p>
-            <p><span>$6.50</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/mangomochi.jpg" alt="Mango Mochi">
-            <h3>Mango Mochi</h3>
-            <p>Tropical and delicious with a creamy mango filling.</p>
-            <p><span>$6.50</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/mochi.jpg" alt="Mixed Flavors Cat Mochi">
-            <h3>Mixed Flavors Cat Mochi</h3>
-            <p>An assortment of our best mochi flavors, each shaped like a cute cat face.</p>
-            <p><span>$10.00</span></p>
-          </div>
-        </div>
+                <div class="item-card">
+                  <img src="./img/cookies.jpg" alt="Cat Cookies">
+                  <h3>Cat Cookies</h3>
+                  <p>Adorably shaped buttery cookies with a hint of vanilla—perfect for a sweet snack.</p>
+                  <p><span>$3.50</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4"  data-name="Cat Cookies" data-price="3.50">Add to Cart</button>
+                </div>
+                
+                <div class="item-card">
+                  <img src="./img/macarons.jpg" alt="Meow-Macarons">
+                  <h3>Meow-Macarons</h3>
+                  <p>Colorful macarons in delightful flavors like vanilla, chocolate, and strawberry.</p>
+                  <p><span>$4.50</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Meow-Macarons" data-price="4.50">Add to Cart</button>
+                </div>
+
+                <div class="item-card">
+                  <img src="./img/pawbrownie.jpg" alt="Paw-some Brownie">
+                  <h3>Paw-some Brownie</h3>
+                  <p>A rich and fudgy chocolate brownie with a paw-shaped design.</p>
+                  <p><span>$5.00</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Paw-some Brownie" data-price="5.00">Add to Cart</button>
+                </div>
+
+                <div class="item-card">
+                  <img src="./img/cupcake.jpg" alt="Cat Cupcake">
+                  <h3>Cat Cupcake</h3>
+                  <p>A fluffy cupcake with creamy frosting, topped with a cute cat face decoration.</p>
+                  <p><span>$3.00</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Cat Cupcake" data-price="3.00">Add to Cart</button>
+                </div>
+
+                <div class="item-card">
+                  <img src="./img/machamochi.jpg" alt="Matcha Mochi">
+                  <h3>Matcha Mochi</h3>
+                  <p>Soft and chewy rice cakes infused with the earthy sweetness of matcha.</p>
+                  <p><span>$6.00</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Matcha Mochi" data-price="6.00">Add to Cart</button>
+                </div>
+
+                <div class="item-card">
+                  <img src="./img/strawmochi.jpg" alt="Strawberry Mochi">
+                  <h3>Strawberry Mochi</h3>
+                  <p>A sweet and fruity treat with strawberry-flavored filling.</p>
+                  <p><span>$6.50</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Strawberry Mochi" data-price="6.50">Add to Cart</button>
+                </div>
+
+                <div class="item-card">
+                  <img src="./img/mangomochi.jpg" alt="Mango Mochi">
+                  <h3>Mango Mochi</h3>
+                  <p>Tropical and delicious with a creamy mango filling.</p>
+                  <p><span>$6.50</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Mango Mochi" data-price="6.50">Add to Cart</button>
+                </div>
+
+                <div class="item-card">
+                  <img src="./img/mochi.jpg" alt="Mixed Flavors Cat Mochi">
+                  <h3>Mixed Flavors Cat Mochi</h3>
+                  <p>An assortment of our best mochi flavors, each shaped like a cute cat face.</p>
+                  <p><span>$10.00</span></p>
+                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Mixed Flavors Cat Mochi" data-price="10.00">Add to Cart</button>
+                </div>
+              </div>
       </section>
       
     
@@ -252,6 +292,7 @@
   <script src="search.js"></script> 
   <script src="login.js"></script> 
   <script src="register.js"></script> 
+  <script src="cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

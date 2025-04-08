@@ -43,6 +43,12 @@
                   </form>
                 </div>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#" id="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                      <i class="fas fa-shopping-cart"></i>
+                      <span class="badge bg-danger" id="item-count">0</span>
+                  </a>
+              </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -55,62 +61,89 @@
           </div>
         </div>
       </nav>
-
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="cart-items" class="list-group">
+                          </ul>
+                          <hr>
+                          <h5>Total Price: <span id="total-price">$0.00</span></h5>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
       <section class="specialty-section">
         <h1 class="specialty-title"> Drinks</h1>
         <p class="specialty-description">Discover our unique and delicious specialty drinks that are perfect for any occasion!</p>
     
         <div class="item-grid">
-          <div class="item-card">
-            <img src="./img/menuMatcha.jpg" alt="Matcha Latte">
-            <h3>Matcha Latte</h3>
-            <p>A smooth and creamy blend of matcha and milk for a delightful treat.</p>
-            <p><span>$4.50</span></p>
+            <div class="item-card">
+              <img src="./img/menuMatcha.jpg" alt="Matcha Latte">
+              <h3>Matcha Latte</h3>
+              <p>A smooth and creamy blend of matcha and milk for a delightful treat.</p>
+              <p><span>$4.50</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Matcha Latte" data-price="4.50">Add to Cart</button>
+            </div>
+            <div class="item-card">
+              <img src="./img/bobatea.jpg" alt="Bubble Tea">
+              <h3>Bubble Tea</h3>
+              <p>Refreshing tea with chewy tapioca pearls in every sip.</p>
+              <p><span>$4.00</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Bubble Tea" data-price="4.00">Add to Cart</button>
+            </div>
+            <div class="item-card">
+              <img src="./img/beer.jpg" alt="Craft Beer">
+              <h3>Craft Beer</h3>
+              <p>Local craft beer with a unique flavor profile for beer enthusiasts.</p>
+              <p><span>$7.00</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Craft Beer" data-price="7.00">Add to Cart</button>
+            </div>
+            <div class="item-card">
+              <img src="./img/meowtini.jpg" alt="Meowtini">
+              <h3>Meowtini</h3>
+              <p>A non-alcoholic fruity cocktail, perfect for a fun and refreshing experience.</p>
+              <p><span>$6.00</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Meowtini" data-price="6.00">Add to Cart</button>
+            </div>
+
+            <div class="item-card">
+              <img src="./img/espresso.jpg" alt="Espresso">
+              <h3>Espresso</h3>
+              <p>A classic, rich, and intense coffee shot for a quick energy boost.</p>
+              <p><span>$3.00</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Espresso" data-price="3.00">Add to Cart</button>
+            </div>
+            <div class="item-card">
+              <img src="./img/Lattemacchiato.png" alt="Latte Macchiato">
+              <h3>Latte Macchiato</h3>
+              <p>A creamy blend of espresso and steamed milk for coffee lovers.</p>
+              <p><span>$4.50</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Latte Macchiato" data-price="4.50">Add to Cart</button>
+            </div>
+            <div class="item-card">
+              <img src="./img/almondcofee.jpg" alt="Almond Coffee">
+              <h3>Almond Coffee</h3>
+              <p>A perfect balance of espresso, steamed milk, almond and foam.</p>
+              <p><span>$5.00</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Almond Coffee" data-price="5.00">Add to Cart</button>
+            </div>
+            <div class="item-card">
+              <img src="./img/catpuccino.jpg" alt="Catpuccino">
+              <h3>Catpuccino</h3>
+              <p>Our special coffee with a cute twist—purrrfect for any cat lover!</p>
+              <p><span>$5.00</span></p>
+              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Catpuccino" data-price="5.00">Add to Cart</button>
+            </div>
           </div>
-          <div class="item-card">
-            <img src="./img/bobatea.jpg" alt="Bubble Tea">
-            <h3>Bubble Tea</h3>
-            <p>Refreshing tea with chewy tapioca pearls in every sip.</p>
-            <p><span>$4.00</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/beer.jpg" alt="Craft Beer">
-            <h3>Craft Beer</h3>
-            <p>Local craft beer with a unique flavor profile for beer enthusiasts.</p>
-            <p><span>$7.00</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/meowtini.jpg" alt="Meowtini">
-            <h3>Meowtini</h3>
-            <p>A non-alcoholic fruity cocktail, perfect for a fun and refreshing experience.</p>
-            <p><span>$6.00</span></p>
-          </div>
-    
-          <div class="item-card">
-            <img src="./img/espresso.jpg" alt="Espresso">
-            <h3>Espresso</h3>
-            <p>A classic, rich, and intense coffee shot for a quick energy boost.</p>
-            <p><span>$3.00</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/Lattemacchiato.png" alt="Latte Macchiato">
-            <h3>Latte Macchiato</h3>
-            <p>A creamy blend of espresso and steamed milk for coffee lovers.</p>
-            <p><span>$4.50</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/almondcofee.jpg" alt="Almond Coffee">
-            <h3>Almond Coffee</h3>
-            <p>A perfect balance of espresso, steamed milk, almond and foam.</p>
-            <p><span>$5.00</span></p>
-          </div>
-          <div class="item-card">
-            <img src="./img/catpuccino.jpg" alt="Catpuccino">
-            <h3>Catpuccino</h3>
-            <p>Our special coffee with a cute twist—purrrfect for any cat lover!</p>
-            <p><span>$5.00</span></p>
-          </div>
-        </div>
       </section>
       
     
@@ -252,6 +285,7 @@
   <script src="search.js"></script>
   <script src="login.js"></script> 
   <script src="register.js"></script> 
+  <script src="cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
