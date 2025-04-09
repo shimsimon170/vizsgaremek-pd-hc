@@ -62,7 +62,7 @@
                       </div>
                       <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                          <button type="button" class="btn btn-primary" id="checkout-btn" onclick="window.location.href='payments.php'">Proceed to Checkout</button>
                       </div>
                   </div>
               </div>
