@@ -1,3 +1,42 @@
+<?php
+require 'db.php'; // Adatbázis kapcsolat
+
+// Hibaüzenetek engedélyezése
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $phone = $_POST['phone']; // Telefonszám beolvasása
+    $email = $_POST['email'];
+    $password = $_POST['password']; // Jelszó beolvasása
+
+    // Ellenőrizzük, hogy az email már létezik-e
+    $stmt = $conn->prepare("SELECT * FROM customers WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        echo "Ez az email már regisztrálva van.";
+    } else {
+        // Jelszó hash-elése
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $is_admin = 0; // Alapértelmezett érték, ha nem admin
+
+        // Felhasználó hozzáadása
+        $stmt = $conn->prepare("INSERT INTO customers (name, phone, email, password, is_admin) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssi", $name, $phone, $email, $hashed_password, $is_admin);
+        
+        if ($stmt->execute()) {
+            echo "Sikeres regisztráció!";
+        } else {
+            echo "Hiba történt a regisztráció során: " . $stmt->error;
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +51,7 @@
 <div class="container mt-5">
     <div class="card mx-auto shadow p-4" style="max-width: 500px;">
       <h5 class="modal-title mb-3">Sign Up</h5>
-      <form action="/register" method="POST">
+      <form method="POST">
         <div class="mb-3">
           <label for="registerName" class="form-label">Name</label>
           <input type="text" class="form-control" id="registerName" name="name" required>
@@ -41,3 +80,4 @@
   </div>
 </body>
 </html>
+

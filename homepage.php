@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php require_once 'web.php'; ?>
 <html>
 
 <head>

@@ -61,4 +61,3 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 });
 
 updateCart();
-
