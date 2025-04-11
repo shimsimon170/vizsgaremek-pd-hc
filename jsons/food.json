@@ -1,0 +1,50 @@
+ [
+      {
+        "name": "Classic Cheeseburger",
+        "image": "img/cheeseburesz.jpg",
+        "description": "A timeless favorite with a juicy beef patty, melted cheese, fresh lettuce, tomato, and a soft sesame bun.",
+        "price": 8.00
+      },
+      {
+        "name": "BBQ Bacon Burger",
+        "image": "img/baconburger.jpg",
+        "description": "Savory and smoky with crispy bacon, tangy BBQ sauce, cheddar cheese, and caramelized onions.",
+        "price": 9.50
+      },
+      {
+        "name": "Veggie Delight Burger",
+        "image": "img/veggieburger.jpg",
+        "description": "A hearty, plant-based patty topped with fresh veggies, avocado, and a zesty sauce.",
+        "price": 7.50
+      },
+      {
+        "name": "Meow-Meat Special Burger",
+        "image": "img/foodIcon.jpg",
+        "description": "A cat café exclusive with double beef patties, secret sauce, and all the fixings for a satisfying bite.",
+        "price": 10.00
+      },
+      {
+        "name": "Classic Shoyu Ramen",
+        "image": "img/shoyuramen.jpg",
+        "description": "A comforting bowl of soy-based broth with tender noodles, sliced pork, bamboo shoots, and a soft-boiled egg.",
+        "price": 12.00
+      },
+      {
+        "name": "Spicy Miso Ramen",
+        "image": "img/spicymisoramenű.jpg",
+        "description": "Packed with bold flavors, this ramen has a rich miso broth with a spicy kick, paired with pork chashu and fresh greens.",
+        "price": 13.50
+      },
+      {
+        "name": "Bento Box",
+        "image": "img/menuSushi.jpg",
+        "description": "A delightful combination of sushi, rice, pickled vegetables, and a choice of teriyaki chicken, salmon, or tofu.",
+        "price": 10.50
+      },
+      {
+        "name": "Purrfect Tonkotsu Ramen",
+        "image": "img/menuRamen.jpg",
+        "description": "Creamy pork bone broth, perfectly cooked noodles, and an assortment of classic toppings.",
+        "price": 12.00
+      }
+    ]

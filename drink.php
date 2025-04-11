@@ -83,67 +83,42 @@
       <section class="specialty-section">
         <h1 class="specialty-title"> Drinks</h1>
         <p class="specialty-description">Discover our unique and delicious specialty drinks that are perfect for any occasion!</p>
-    
-        <div class="item-grid">
-            <div class="item-card">
-              <img src="./img/menuMatcha.jpg" alt="Matcha Latte">
-              <h3>Matcha Latte</h3>
-              <p>A smooth and creamy blend of matcha and milk for a delightful treat.</p>
-              <p><span>$4.50</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Matcha Latte" data-price="4.50">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/bobatea.jpg" alt="Bubble Tea">
-              <h3>Bubble Tea</h3>
-              <p>Refreshing tea with chewy tapioca pearls in every sip.</p>
-              <p><span>$4.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Bubble Tea" data-price="4.00">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/beer.jpg" alt="Craft Beer">
-              <h3>Craft Beer</h3>
-              <p>Local craft beer with a unique flavor profile for beer enthusiasts.</p>
-              <p><span>$7.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Craft Beer" data-price="7.00">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/meowtini.jpg" alt="Meowtini">
-              <h3>Meowtini</h3>
-              <p>A non-alcoholic fruity cocktail, perfect for a fun and refreshing experience.</p>
-              <p><span>$6.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Meowtini" data-price="6.00">Add to Cart</button>
-            </div>
+        
+        <div id="items-container" class="item-grid">
+    <script>
+ function loadItems() {
+    fetch('drindata.php')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('items-container');
+            container.innerHTML = ''; 
+            data.forEach(item => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'item-card';
+                itemCard.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p><span>$${item.price}</span></p> 
+                    <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="${item.name}" data-price="${item.price}">Add to Cart</button>
+                `;
+                container.appendChild(itemCard); 
 
-            <div class="item-card">
-              <img src="./img/espresso.jpg" alt="Espresso">
-              <h3>Espresso</h3>
-              <p>A classic, rich, and intense coffee shot for a quick energy boost.</p>
-              <p><span>$3.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Espresso" data-price="3.00">Add to Cart</button>
+                const addToCartButton = itemCard.querySelector('.add-to-cart');
+                addToCartButton.addEventListener('click', function() {
+                    const itemName = this.getAttribute('data-name');
+                    const itemPrice = this.getAttribute('data-price');
+                    cart.push({ name: itemName, price: itemPrice });
+                    updateCart(); 
+                });
+            });
+        })
+        .catch(error => console.error('Error', error));
+        } 
+        loadItems();
+        </script>
             </div>
-            <div class="item-card">
-              <img src="./img/Lattemacchiato.png" alt="Latte Macchiato">
-              <h3>Latte Macchiato</h3>
-              <p>A creamy blend of espresso and steamed milk for coffee lovers.</p>
-              <p><span>$4.50</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Latte Macchiato" data-price="4.50">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/almondcofee.jpg" alt="Almond Coffee">
-              <h3>Almond Coffee</h3>
-              <p>A perfect balance of espresso, steamed milk, almond and foam.</p>
-              <p><span>$5.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Almond Coffee" data-price="5.00">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/catpuccino.jpg" alt="Catpuccino">
-              <h3>Catpuccino</h3>
-              <p>Our special coffee with a cute twist—purrrfect for any cat lover!</p>
-              <p><span>$5.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Catpuccino" data-price="5.00">Add to Cart</button>
-            </div>
-          </div>
-      </section>
+        </section>
       
     
   <div class="container-fluid">

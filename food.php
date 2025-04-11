@@ -84,67 +84,41 @@
       <section class="specialty-section">
         <h1 class="specialty-title"> Foods</h1>
         <p class="specialty-description">Discover our unique and delicious specialty foods that are perfect for any occasion!</p>
-    
-        <div class="item-grid">
-            <div class="item-card">
-              <img src="./img/cheeseburesz.jpg" alt="Classic Cheeseburger">
-              <h3>Classic Cheeseburger</h3>
-              <p>A timeless favorite with a juicy beef patty, melted cheese, fresh lettuce, tomato, and a soft sesame bun.</p>
-              <p><span>$8.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Classic Cheeseburger" data-price="8.00">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/baconburger.jpg" alt="BBQ Bacon Burger">
-              <h3>BBQ Bacon Burger</h3>
-              <p>Savory and smoky with crispy bacon, tangy BBQ sauce, cheddar cheese, and caramelized onions.</p>
-              <p><span>$9.50</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="BBQ Bacon Burger" data-price="9.50">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/veggieburger.jpg" alt="Veggie Delight Burger">
-              <h3>Veggie Delight Burger</h3>
-              <p>A hearty, plant-based patty topped with fresh veggies, avocado, and a zesty sauce.</p>
-              <p><span>$7.50</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Veggie Delight Burger" data-price="7.50">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/foodIcon.jpg" alt="Meow-Meat Special Burger">
-              <h3>Meow-Meat Special Burger</h3>
-              <p>A cat café exclusive with double beef patties, secret sauce, and all the fixings for a satisfying bite.</p>
-              <p><span>$10.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Meow-Meat Special Burger" data-price="10.00">Add to Cart</button>
-            </div>
+        <div id="items-container" class="item-grid">
+    <script>
+ function loadItems() {
+    fetch('foodata.php')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('items-container');
+            container.innerHTML = ''; 
+            data.forEach(item => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'item-card';
+                itemCard.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p><span>$${item.price}</span></p> 
+                    <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="${item.name}" data-price="${item.price}">Add to Cart</button>
+                `;
+                container.appendChild(itemCard); 
 
-            <div class="item-card">
-              <img src="./img/shoyuramen.jpg" alt="Classic Shoyu Ramen">
-              <h3>Classic Shoyu Ramen</h3>
-              <p>A comforting bowl of soy-based broth with tender noodles, sliced pork, bamboo shoots, and a soft-boiled egg.</p>
-              <p><span>$12.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Classic Shoyu Ramen" data-price="12.00">Add to Cart</button>
+                const addToCartButton = itemCard.querySelector('.add-to-cart');
+                addToCartButton.addEventListener('click', function() {
+                    const itemName = this.getAttribute('data-name');
+                    const itemPrice = this.getAttribute('data-price');
+                    cart.push({ name: itemName, price: itemPrice });
+                    updateCart(); 
+                });
+            });
+        })
+        .catch(error => console.error('Error', error));
+        } 
+        loadItems();
+        </script>
             </div>
-            <div class="item-card">
-              <img src="./img/spicymisoramenű.jpg" alt="Spicy Miso Ramen">
-              <h3>Spicy Miso Ramen</h3>
-              <p>Packed with bold flavors, this ramen has a rich miso broth with a spicy kick, paired with pork chashu and fresh greens.</p>
-              <p><span>$13.50</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Spicy Miso Ramen" data-price="13.50">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/menuSushi.jpg" alt="Bento Box">
-              <h3>Bento Box</h3>
-              <p>A delightful combination of sushi, rice, pickled vegetables, and a choice of teriyaki chicken, salmon, or tofu.</p>
-              <p><span>$10.50</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Bento Box" data-price="10.50">Add to Cart</button>
-            </div>
-            <div class="item-card">
-              <img src="./img/menuRamen.jpg" alt="Purrfect Tonkotsu Ramen">
-              <h3>Purrfect Tonkotsu Ramen</h3>
-              <p>Creamy pork bone broth, perfectly cooked noodles, and an assortment of classic toppings.</p>
-              <p><span>$12.00</span></p>
-              <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Purrfect Tonkotsu Ramen" data-price="12.00">Add to Cart</button>
-            </div>
-          </div>
-      </section>
+        </section>
       
       <div class="modal fade" id="signUpForm" tabindex="-1">
     <div class="modal-dialog">

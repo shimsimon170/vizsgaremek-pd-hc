@@ -1,0 +1,50 @@
+ [   
+      {
+        "name": "Matcha Latte",
+        "image": "img/menuMatcha.jpg",
+        "description": "A smooth and creamy blend of matcha and milk for a delightful treat.",
+        "price": 4.50
+      },
+      {
+        "name": "Bubble Tea",
+        "image": "img/bobatea.jpg",
+        "description": "Refreshing tea with chewy tapioca pearls in every sip.",
+        "price": 4.00
+      },
+      {
+        "name": "Craft Beer",
+        "image": "img/beer.jpg",
+        "description": "Local craft beer with a unique flavor profile for beer enthusiasts.",
+        "price": 7.00
+      },
+      {
+        "name": "Meowtini",
+        "image": "img/meowtini.jpg",
+        "description": "A non-alcoholic fruity cocktail, perfect for a fun and refreshing experience.",
+        "price": 6.00
+      },
+      {
+        "name": "Espresso",
+        "image": "img/espresso.jpg",
+        "description": "A classic, rich, and intense coffee shot for a quick energy boost.",
+        "price": 3.00
+      },
+      {
+        "name": "Latte Macchiato",
+        "image": "img/Lattemacchiato.png",
+        "description": "A creamy blend of espresso and steamed milk for coffee lovers.",
+        "price": 4.50
+      },
+      {
+        "name": "Almond Coffee",
+        "image": "img/almondcofee.jpg",
+        "description": "A perfect balance of espresso, steamed milk, almond and foam.",
+        "price": 5.00
+      },
+      {
+        "name": "Catpuccino",
+        "image": "img/catpuccino.jpg",
+        "description": "Our special coffee with a cute twist—purrrfect for any cat lover!",
+        "price": 5.00
+      }
+    ]  

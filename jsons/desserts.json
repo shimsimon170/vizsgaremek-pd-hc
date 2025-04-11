@@ -1,0 +1,50 @@
+[
+      {
+        "name": "Cat Cookies",
+        "image": "img/cookies.jpg",
+        "description": "Adorably shaped buttery cookies with a hint of vanilla—perfect for a sweet snack.",
+        "price": 3.50
+      },
+      {
+        "name": "Meow-Macarons",
+        "image": "img/macarons.jpg",
+        "description": "Colorful macarons in delightful flavors like vanilla, chocolate, and strawberry.",
+        "price": 4.50
+      },
+      {
+        "name": "Paw-some Brownie",
+        "image": "img/pawbrownie.jpg",
+        "description": "A rich and fudgy chocolate brownie with a paw-shaped design.",
+        "price": 5.00
+      },
+      {
+        "name": "Cat Cupcake",
+        "image": "img/cupcake.jpg",
+        "description": "A fluffy cupcake with creamy frosting, topped with a cute cat face decoration.",
+        "price": 3.00
+      },
+      {
+        "name": "Matcha Mochi",
+        "image": "img/machamochi.jpg",
+        "description": "Soft and chewy rice cakes infused with the earthy sweetness of matcha.",
+        "price": 6.00
+      },
+      {
+        "name": "Strawberry Mochi",
+        "image": "img/strawmochi.jpg",
+        "description": "A sweet and fruity treat with strawberry-flavored filling.",
+        "price": 6.50
+      },
+      {
+        "name": "Mango Mochi",
+        "image": "img/mangomochi.jpg",
+        "description": "Tropical and delicious with a creamy mango filling.",
+        "price": 6.50
+      },
+      {
+        "name": "Mixed Flavors Cat Mochi",
+        "image": "img/mochi.jpg",
+        "description": "An assortment of our best mochi flavors, each shaped like a cute cat face.",
+        "price": 10.00
+      }
+    ]

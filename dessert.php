@@ -85,73 +85,42 @@
       <section class="specialty-section">
         <h1 class="specialty-title"> Desserts</h1>
         <p class="specialty-description">Discover our unique and delicious specialty desserts that are perfect for any occasion!</p>
-        <div class="item-grid">
-                <div class="item-card">
-                  <img src="./img/cookies.jpg" alt="Cat Cookies">
-                  <h3>Cat Cookies</h3>
-                  <p>Adorably shaped buttery cookies with a hint of vanilla—perfect for a sweet snack.</p>
-                  <p><span>$3.50</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4"  data-name="Cat Cookies" data-price="3.50">Add to Cart</button>
-                </div>
-                
-                <div class="item-card">
-                  <img src="./img/macarons.jpg" alt="Meow-Macarons">
-                  <h3>Meow-Macarons</h3>
-                  <p>Colorful macarons in delightful flavors like vanilla, chocolate, and strawberry.</p>
-                  <p><span>$4.50</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Meow-Macarons" data-price="4.50">Add to Cart</button>
-                </div>
+        
+    <div id="items-container" class="item-grid">
+    <script>
+ function loadItems() {
+    fetch('desdata.php')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('items-container');
+            container.innerHTML = ''; 
+            data.forEach(item => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'item-card';
+                itemCard.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p><span>$${item.price}</span></p> 
+                    <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="${item.name}" data-price="${item.price}">Add to Cart</button>
+                `;
+                container.appendChild(itemCard); 
 
-                <div class="item-card">
-                  <img src="./img/pawbrownie.jpg" alt="Paw-some Brownie">
-                  <h3>Paw-some Brownie</h3>
-                  <p>A rich and fudgy chocolate brownie with a paw-shaped design.</p>
-                  <p><span>$5.00</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Paw-some Brownie" data-price="5.00">Add to Cart</button>
-                </div>
-
-                <div class="item-card">
-                  <img src="./img/cupcake.jpg" alt="Cat Cupcake">
-                  <h3>Cat Cupcake</h3>
-                  <p>A fluffy cupcake with creamy frosting, topped with a cute cat face decoration.</p>
-                  <p><span>$3.00</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Cat Cupcake" data-price="3.00">Add to Cart</button>
-                </div>
-
-                <div class="item-card">
-                  <img src="./img/machamochi.jpg" alt="Matcha Mochi">
-                  <h3>Matcha Mochi</h3>
-                  <p>Soft and chewy rice cakes infused with the earthy sweetness of matcha.</p>
-                  <p><span>$6.00</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Matcha Mochi" data-price="6.00">Add to Cart</button>
-                </div>
-
-                <div class="item-card">
-                  <img src="./img/strawmochi.jpg" alt="Strawberry Mochi">
-                  <h3>Strawberry Mochi</h3>
-                  <p>A sweet and fruity treat with strawberry-flavored filling.</p>
-                  <p><span>$6.50</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Strawberry Mochi" data-price="6.50">Add to Cart</button>
-                </div>
-
-                <div class="item-card">
-                  <img src="./img/mangomochi.jpg" alt="Mango Mochi">
-                  <h3>Mango Mochi</h3>
-                  <p>Tropical and delicious with a creamy mango filling.</p>
-                  <p><span>$6.50</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Mango Mochi" data-price="6.50">Add to Cart</button>
-                </div>
-
-                <div class="item-card">
-                  <img src="./img/mochi.jpg" alt="Mixed Flavors Cat Mochi">
-                  <h3>Mixed Flavors Cat Mochi</h3>
-                  <p>An assortment of our best mochi flavors, each shaped like a cute cat face.</p>
-                  <p><span>$10.00</span></p>
-                  <button class="add-to-cart btn btn-dark rounded-pill px-4" data-name="Mixed Flavors Cat Mochi" data-price="10.00">Add to Cart</button>
-                </div>
-              </div>
-      </section>
-      
+                const addToCartButton = itemCard.querySelector('.add-to-cart');
+                addToCartButton.addEventListener('click', function() {
+                    const itemName = this.getAttribute('data-name');
+                    const itemPrice = this.getAttribute('data-price');
+                    cart.push({ name: itemName, price: itemPrice });
+                    updateCart(); 
+                });
+            });
+        })
+        .catch(error => console.error('Error', error));
+        } 
+        loadItems();
+        </script>
+            </div>
+        </section>
     
   <div class="container-fluid">
     <footer
