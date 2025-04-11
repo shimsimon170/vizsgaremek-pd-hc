@@ -1,20 +1,15 @@
 <?php
+$host = "localhost";
+$user = "root";
+$pass = "root";
+$dbname = "yumeneko";
 
-class Config {
+// Create connection
+$conn = new mysqli($host, $user, $pass, $dbname);
 
-    public $dbCon;
-
-    public function __construct()
-    {
-        $this->dbCon = mysqli_connect('localhost', 'root', 'root', 'yumeneko');
-    }
-
-    public function getConnection(){
-        return $this->dbCon;
-    }
-
-    public function close(){
-        mysqli_close($this->dbCon);
-        $this->dbCon = null;
-    }
+// Checking for connection errors
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+?>

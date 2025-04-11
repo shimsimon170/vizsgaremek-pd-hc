@@ -1,37 +1,34 @@
 <?php
-require 'db.php'; // Adatbázis kapcsolat
+require "./Controller/Config.php";
 
-// Hibaüzenetek engedélyezése
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
-    $phone = $_POST['phone']; // Telefonszám beolvasása
+    $phone = $_POST['phone'];
     $email = $_POST['email'];
-    $password = $_POST['password']; // Jelszó beolvasása
+    $password = $_POST['password'];
 
-    // Ellenőrizzük, hogy az email már létezik-e
     $stmt = $conn->prepare("SELECT * FROM customers WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
     
     if ($result->num_rows > 0) {
-        echo "Ez az email már regisztrálva van.";
+        echo "Email already in use.";
     } else {
-        // Jelszó hash-elése
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $is_admin = 0; // Alapértelmezett érték, ha nem admin
+        $is_admin = 0;
 
-        // Felhasználó hozzáadása
         $stmt = $conn->prepare("INSERT INTO customers (name, phone, email, password, is_admin) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssi", $name, $phone, $email, $hashed_password, $is_admin);
         
         if ($stmt->execute()) {
-            echo "Sikeres regisztráció!";
+            header("Location: menus.php");
+            exit();
         } else {
-            echo "Hiba történt a regisztráció során: " . $stmt->error;
+            echo "Error during registration: " . $stmt->error;
         }
     }
 }
