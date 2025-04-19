@@ -1,0 +1,2 @@
+designer view: https://www.figma.com/design/PKDZEDRfxMmSbzYOVQTpME/yumeneko?node-id=0-1&p=f&t=xs6BdIaX88AayQNx-0
+prototype view: https://www.figma.com/proto/PKDZEDRfxMmSbzYOVQTpME/yumeneko?node-id=0-1&p=f&t=xs6BdIaX88AayQNx-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A703
