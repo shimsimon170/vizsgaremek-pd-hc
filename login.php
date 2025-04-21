@@ -4,19 +4,30 @@ require "./Controller/Config.php";
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+session_start(); 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    $adminEmail = 'admin@example.com';
+    $adminPassword = 'yumeneko123';
+
+    if ($email === $adminEmail && $password === $adminPassword) {
+        $_SESSION['user'] = 'admin';
+        header("Location: admin.php");
+        exit();
+    }
     $stmt = $conn->prepare("SELECT * FROM customers WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
+            $_SESSION['user'] = $user['email'];
             header("Location: menus.php");
             exit();
         } else {

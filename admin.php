@@ -174,7 +174,6 @@
   </section>
 
   <script>
-    // Beégetett termékek JSON-adatok
     let products = [
       {
         "name": "Classic Cheeseburger",
@@ -322,7 +321,6 @@
       }
     ];
 
-    // Dummy rendelés adatok
     const orders = [
       {
         id: 1,
@@ -406,10 +404,6 @@
   }
       
     ];
-
-    // Függvények az adatok megjelenítéséhez
-
-    // Termékek megjelenítése kártyákban
     function renderProducts() {
       const container = document.getElementById('productContainer');
       container.innerHTML = '';
@@ -429,7 +423,7 @@
       });
     }
 
-    // Termék törlése
+
     function deleteProduct(index) {
       if (confirm("Are you sure you want to delete this product?")) {
         products.splice(index, 1);
@@ -437,7 +431,6 @@
       }
     }
 
-    // Rendelések megjelenítése
     function renderOrders() {
       const ordersTableBody = document.getElementById('ordersTableBody');
       ordersTableBody.innerHTML = '';
@@ -455,7 +448,7 @@
       });
     }
 
-    // Új termék hozzáadása űrlap kezelése
+
     const addProductForm = document.getElementById('addProductForm');
     addProductForm.addEventListener('submit', event => {
       event.preventDefault();
@@ -468,18 +461,13 @@
       products.push(newProduct);
       addProductForm.reset();
       alert("Product added!");
-      // Automatikusan visszairányít a termékek nézetére
       showSection('productsSection');
       renderProducts();
     });
 
-    // Menü váltás (szekciók megjelenítése/elrejtése)
     function showSection(sectionId) {
-      // Elrejti az összes szekciót
       document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
-      // Megjeleníti a kiválasztott szekciót
       document.getElementById(sectionId).classList.remove('hidden');
-      // Ha a rendelés nézetre váltunk, rendereljük az adatokat
       if (sectionId === 'ordersSection') {
         renderOrders();
       }
@@ -487,10 +475,16 @@
         renderProducts();
       }
     }
-
-    // Alapértelmezetten a termékek nézet legyen megnyitva
     renderProducts();
   </script>
 
 </body>
 </html>
+ 
+<?php
+session_start();
+if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
+    header("Location: login.php");
+    exit();
+}
+?>
