@@ -18,27 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     async function searchInOtherPages(searchTerm) {
-        const pages = ["drink.php", "dessert.php", "food.php"];
-        for (let page of pages) {
+        const endpoints = [
+            { url: "./jsons/drinks.json", page: "drink.php" },
+            { url: "./jsons/desserts.json", page: "dessert.php" },
+            { url: "./jsons/food.json", page: "food.php" }
+        ];
+
+        for (let { url, page } of endpoints) {
             try {
-                const response = await fetch(page);
+                const response = await fetch(url);
                 if (!response.ok) continue;
 
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, "text/html");
+                const data = await response.json();
 
-                const titles = doc.querySelectorAll("h1, h2, h3, h4, h5, h6, li");
-                for (let title of titles) {
-                    if (title.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
-                        window.location.href = `${page}?search=${encodeURIComponent(searchTerm)}`;
-                        return;
-                    }
+                const match = data.find(item =>
+                    item.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    item.description?.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+
+                if (match) {
+                    window.location.href = `${page}?search=${encodeURIComponent(searchTerm)}`;
+                    return;
                 }
+
             } catch (error) {
-                console.error("Error fetching", page, error);
+                console.error("Error fetching", url, error);
             }
         }
+
         alert("No matching content found.");
     }
 
@@ -53,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Auto-scroll when redirected with search parameter
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get("search");
     if (searchParam) {
